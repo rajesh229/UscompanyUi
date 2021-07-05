@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { BehaviorSubject, Subject } from 'rxjs';
+import { BehaviorSubject, Subject,Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -8,9 +8,17 @@ import { BehaviorSubject, Subject } from 'rxjs';
 export class CommonService {
   token:any;
   httpOptions:any;
+  User= {
+
+}
   private loginstatus=new BehaviorSubject('');
   publicsubject=this.loginstatus;
-  constructor(private http:HttpClient) { }
+  private currentUserSubject: BehaviorSubject<object>;
+  public currentUser: Observable<object>;
+  constructor(private http:HttpClient) {
+    this.currentUserSubject = new BehaviorSubject<object>(JSON.parse(localStorage.getItem('currentUser')));
+    this.currentUser = this.currentUserSubject.asObservable();
+   }
 
   postservice(api,data){
     console.log(api);
@@ -65,5 +73,9 @@ return responce;
     }else{
       return false;
     }
+  }
+
+  currentuserstatus(data){
+    this.currentUserSubject.next(data);
   }
 }

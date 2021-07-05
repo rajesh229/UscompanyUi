@@ -40,7 +40,8 @@ const data={
 
 }
 this.common.postservice(apiurl.empsave,data).subscribe(data=>{
-  console.log(data);
+ // console.log(data);
+  this.Registationform.reset();
   this.response=data;
   this.Message=this.response.message;
 })

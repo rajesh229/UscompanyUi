@@ -43,10 +43,10 @@ if(this.loginform.valid){
         localStorage.setItem("authToken",token);
         localStorage.setItem("Desiganation",this.reObj.result.Desiganation)
         localStorage.setItem("name",this.reObj.result.Name);
-        this.router.navigate(['/Dashboard/admin'])
-       // this.snapshot.data[this.reObj.result]
-       this.loginData.emit(this.reObj.result)
-        //this.isactive=true;
+        localStorage.setItem("currentUser",JSON.stringify(this.reObj.result));
+        this.common.currentuserstatus(this.reObj.result );
+        this.router.navigate(['/Dashboard/admin']);
+
       }else{
         console.log(data)
 this.responsemessage=this.reObj.message;

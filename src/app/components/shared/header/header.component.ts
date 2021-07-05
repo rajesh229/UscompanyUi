@@ -9,11 +9,19 @@ import { takeWhile } from 'rxjs/operators';
 })
 export class HeaderComponent implements OnInit {
   name:String;
-
+  userdatad:any;
   constructor(private router:Router,private common:CommonService) { }
 
   ngOnInit() {
-    this.name=localStorage.getItem("name");
+    this.common.currentUser.subscribe(data=>{
+      // debugger;
+      if(data!==undefined  && data!==null ){
+       this.userdatad=data;
+      // this.isadmin=this.userdatad.isadmin;
+      this.name=this.userdatad.Name;
+       }
+     });
+    //this.name=localStorage.getItem("name");
   }
   logout(){
 this.router.navigate(["/"]);

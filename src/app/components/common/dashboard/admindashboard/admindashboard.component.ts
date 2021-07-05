@@ -18,21 +18,21 @@ isadmin:boolean=false;
 UsersData:any;
   ngOnInit() {
     //console.log(this.router.snapshot)
-    this.common.publicsubject.subscribe(data=>{
+    this.common.currentUser.subscribe(data=>{
      // debugger;
-     // if(data){
+     if(data!==undefined  && data!==null ){
       this.userdatad=data;
       this.isadmin=this.userdatad.isadmin;
 
-     // }
+      }
     });
    // debugger;
 
-    if(this.userdata!==undefined && this.userdata!==null && this.userdata!=="undefined" && this.userdata!==''){
+    if(this.userdatad!==undefined && this.userdatad!==null && this.userdatad!=="undefined" && this.userdatad!==''){
 
-      if(this.userdata=="Admin"){
+      if(this.userdatad.Desiganation=="Admin"){
         this.getUsersData(apiurl.getallusers);
-      }else if(this.userdata=="Manager"){
+      }else if(this.userdatad.Desiganation=="Manager"){
         this.getUsersData(apiurl.getstaff);
       }
     }

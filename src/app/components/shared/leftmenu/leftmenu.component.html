@@ -1,0 +1,31 @@
+<div class="l-sidebar">
+  <div class="logo">
+    <div class="logo__txt">O</div>
+  </div>
+  <div class="l-sidebar__content">
+    <nav class="c-menu js-menu">
+      <ul class="u-list">
+        <li routerLinkActive="is-active" [routerLinkActiveOptions]="{exact:true}"  routerLink="/Dashboard/admin" class="c-menu__item " data-toggle="tooltip" title="Proposals">
+          <div  class="c-menu__item__inner"><i class="fa fa-file-text-o"></i>
+            <div class="c-menu-item__title"><span><a>Proposals</a></span></div>
+          </div>
+        </li>
+        <li routerLinkActive="is-active" routerLink="/Dashboard/documents" class="c-menu__item has-submenu" data-toggle="tooltip" title="History">
+          <div class="c-menu__item__inner"><i class="fa fa-history"></i>
+            <div class="c-menu-item__title"><span>History</span></div>
+          </div>
+        </li>
+        <li routerLinkActive="is-active" routerLink="/Dashboard/accounts" class="c-menu__item has-submenu" data-toggle="tooltip" title="Accounts">
+          <div class="c-menu__item__inner"><i class="fa fa-address-book-o"></i>
+            <div class="c-menu-item__title"><span>Accounts</span></div>
+          </div>
+        </li>
+        <li routerLinkActive="is-active" routerLink="/Dashboard/settings" class="c-menu__item has-submenu" data-toggle="tooltip" title="Settings">
+          <div class="c-menu__item__inner"><i class="fa fa-cogs"></i>
+            <div class="c-menu-item__title"><span>Settings</span></div>
+          </div>
+        </li>
+      </ul>
+    </nav>
+  </div>
+</div>

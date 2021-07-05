@@ -1,0 +1,112 @@
+<div class="container" >
+  <form class="form-horizontal" role="form" [formGroup]="Registationform">
+      <h2>Registration Form</h2>
+      <div class="form-group">
+          <label for="firstName" class="col-sm-3 control-label">Full Name</label>
+          <div class="col-sm-9">
+              <input type="text" formControlName="firstName" name="" id="firstName" placeholder="Full Name" class="form-control" autofocus>
+              <!-- <span class="help-block">Last Name, First Name, eg.: Smith, Harry</span> -->
+              <div  class="help-block" style="color:red" *ngIf = "Registationform.controls['firstName'].errors  && Registationform.controls['firstName'].touched">
+                <span  class='error' *ngIf = "Registationform.controls['firstName'].errors.required ">Please Enter Name*.</span>
+               </div>
+          </div>
+      </div>
+      <div class="form-group">
+          <label for="email" class="col-sm-3 control-label">Email</label>
+          <div class="col-sm-9">
+              <input type="email" formControlName="email" name="email" id="email" placeholder="Email" class="form-control">
+              <div class="help-block" style="color:red" *ngIf = "Registationform.controls['email'].errors  && Registationform.controls['email'].touched">
+                <span  class='error' *ngIf = "Registationform.controls['email'].errors.required  ">Please Enter Email.</span>
+                <span  class='error' *ngIf = "Registationform.controls['email'].errors.email ">Please Enter Email pattron.</span>
+
+               </div>
+          </div>
+      </div>
+      <div class="form-group">
+          <label for="password" class="col-sm-3 control-label">Password</label>
+          <div class="col-sm-9">
+              <input type="password" formControlName="password" name="password" id="password" placeholder="Password" class="form-control">
+              <div class="help-block" style="color:red" *ngIf = "Registationform.controls['password'].errors  && Registationform.controls['password'].touched">
+                <span  class='error' *ngIf = "Registationform.controls['password'].errors.required ">Please select Gender.</span>
+               </div>
+          </div>
+      </div>
+      <div class="form-group">
+          <label for="birthDate" class="col-sm-3 control-label">Mobilenumber</label>
+          <div class="col-sm-9">
+              <input type="phoneNumber" formControlName="mobileNumber" name="mobileNumber" id="birthDate" class="form-control">
+              <div class="help-block" style="color:red" *ngIf = "Registationform.controls['mobileNumber'].errors  && Registationform.controls['mobileNumber'].touched">
+                <span  class='error' *ngIf = "Registationform.controls['mobileNumber'].errors.required ">Please Enter Mobile number </span>
+                <span  class='error' *ngIf = "(Registationform.controls['mobileNumber'].errors.minlength || Registationform.controls['mobileNumber'].errors.maxlength) && !Registationform.controls['mobileNumber'].errors.pattern  ">Please Enter 10 digits of number</span>
+                <span  class='error' *ngIf = "Registationform.controls['mobileNumber'].errors.pattern">Please Enter Numbers Only</span>
+
+                <!-- <span  class='error' *ngIf = "Registationform.controls['mobileNumber'].errors.strts_number"> Number Start with 6,7,8,9.</span> -->
+               </div>
+          </div>
+      </div>
+      <div class="form-group">
+          <label for="country" class="col-sm-3 control-label">Designation</label>
+          <div class="col-sm-9">
+              <select id="country" formControlName="Designation" name="Designation" class="form-control">
+                <option  value="">Select Designation</option>
+
+                  <option  value="Admin">Admin</option>
+                  <option value="Manager">Manager</option>
+                  <option value="Staff">Staff</option>
+
+              </select>
+              <div class="help-block" style="color:red" *ngIf = "Registationform.controls['Designation'].errors  && Registationform.controls['Designation'].touched">
+                <span  class='error' *ngIf = "Registationform.controls['Designation'].errors.required ">Please select Designation.</span>
+               </div>
+          </div>
+      </div> <!-- /.form-group -->
+      <div class="form-group">
+          <label class="control-label col-sm-3">Gender</label>
+          <div class="col-sm-6">
+              <div class="row">
+                  <div class="col-sm-4">
+                      <label class="radio-inline">
+                          <input type="radio" formControlName="gender" name="gender" id="femaleRadio" value="Female">Female
+                      </label>
+                  </div>
+                  <div class="col-sm-4">
+                      <label class="radio-inline">
+                          <input type="radio" formControlName="gender" name="gender" id="maleRadio" value="Male">Male
+                      </label>
+                  </div>
+                  <div class="help-block" style="color:red" *ngIf = "Registationform.controls['gender'].errors  && Registationform.controls['gender'].touched">
+                    <span  class='error' *ngIf = "Registationform.controls['gender'].errors.required ">Please select Gender.</span>
+                   </div>
+                  <!-- <div class="col-sm-4">
+                      <label class="radio-inline">
+                          <input type="radio" id="uncknownRadio" value="Unknown">Unknown
+                      </label>
+                  </div> -->
+              </div>
+          </div>
+      </div> <!-- /.form-group -->
+      <!-- <div class="form-group">
+          <label class="control-label col-sm-3">Meal Preference</label>
+          <div class="col-sm-9">
+              <div class="checkbox">
+                  <label>
+                      <input type="checkbox" id="calorieCheckbox" value="Low calorie">Low calorie
+                  </label>
+              </div>
+              <div class="checkbox">
+                  <label>
+                      <input type="checkbox" id="saltCheckbox" value="Low salt">Low salt
+                  </label>
+              </div>
+          </div>
+      </div> -->
+
+      <div class="form-group">
+          <div class="col-sm-9 col-sm-offset-3">
+              <button type="submit" (click)="Createuser()" class="btn btn-primary btn-block">Register</button>
+          </div>
+              <span  class="help-block">{{Message}}</span>
+
+      </div>
+  </form> <!-- /form -->
+</div>

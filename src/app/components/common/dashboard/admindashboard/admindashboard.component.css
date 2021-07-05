@@ -1,0 +1,9 @@
+ul.addworksw {list-style-type: none;float: right;margin-top: 8px;padding: 0;}ul.addworksw li { float: left;
+}ul.addworksw li a { border: 1px solid #e1e8ec; color: #62607f; margin: 0px 6px; padding: 8px 15px; font-size: 13px; text-decoration: none !important;
+}ul.addworksw li a:hover { background: #5e5eaa !important; color: #fff; border: 1px solid #5e5eaa;
+}ul.addworksw li i { margin-right: 6px;
+}
+
+.usertable{
+  margin-top: 90px;
+}

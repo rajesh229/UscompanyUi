@@ -8,4 +8,4 @@ export const empsave=apiUrl+"/Employess/empsave";
 export const getallusers=apiUrl+"/Employess/getallusers";
 export const removeuser=apiUrl+"/Employess/removeuser";
 export const getstaff=apiUrl+"/Employess/getstaffony";
-export const mailutl="";
+export const mailutltestpush="";
